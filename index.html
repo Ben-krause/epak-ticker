@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cost of Delay Tracker</title>
+  <style>
+    body {
+      background-color: #0d1b2a;
+      color: #ffffff;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #00b4d8;
+      margin-bottom: 0.5rem;
+    }
+    #ticker {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <h1>LIVE COST OF DELAY</h1>
+  <div id="ticker">$0.00</div>
+
+  <script>
+    // Configurable values
+    const startDate = new Date('2025-02-14T00:00:00Z');
+    const dollarsPerSecond = 747000 / (365 * 24 * 60 * 60); // $747k per year
+
+    function updateTicker() {
+      const now = new Date();
+      const elapsedSeconds = Math.floor((now - startDate) / 1000);
+      const amount = elapsedSeconds * dollarsPerSecond;
+      document.getElementById('ticker').textContent =
+        '$' + amount.toLocaleString('en-US', {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        });
+    }
+
+    updateTicker();
+    setInterval(updateTicker, 1000);
+  </script>
+</body>
+</html>
