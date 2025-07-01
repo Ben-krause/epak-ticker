@@ -5,41 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cost of Delay Tracker</title>
   <style>
-    body {
-      background-color: #fff;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #ffffff;
       color: #ff0000;
       font-family: Arial, Helvetica, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
+      text-align: center;
     }
     h1 {
-      font-size: 2.5rem;
-      color: #ff0000;
-      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8vw;
       font-weight: bold;
-      margin-bottom: 0.5rem;
+      margin: 0 0 1rem 0;
       text-transform: uppercase;
     }
     #ticker {
-      font-size: 3rem;
+      font-size: 15vw;
       font-weight: bold;
-      color: #ff0000;
-      font-family: Arial, Helvetica, sans-serif;
+      word-wrap: break-word;
     }
   </style>
 </head>
 <body>
-  <h1>LIVE COST OF DELAY</h1>
+  <h1>Live Cost of Delay</h1>
   <div id="ticker">$0.00</div>
 
   <script>
-    // Configurable values
     const startDate = new Date('2025-02-14T00:00:00Z');
-    const dollarsPerSecond = 747000 / (365 * 24 * 60 * 60); // $747k per year
+    const dollarsPerSecond = 747000 / (365 * 24 * 60 * 60);
 
     function updateTicker() {
       const now = new Date();
